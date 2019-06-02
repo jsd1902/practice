@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div, img {
+	width: 200px;
+	height: 150px;
+}
+
+img {
+	position: absolute;
+}
+
+div {
+	position: relative;
+	overflow: hidden;
+}
+</style>
+<script type="text/javascript">
+	onload = function() {
+		var imgs = document.getElementsByTagName("img");
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.left = i * 200 + "px";
+		}
+	}
+	 var timer=setInterval(changeImg, 2000);
+	function changeImg() {
+		var moveTimer = setInterval(function() {
+			var imgs = document.getElementsByTagName("img");
+			for (var i = 0; i < imgs.length; i++) {
+				var left = parseInt(imgs[i].style.left);
+				left -= 2;
+				if (left <= -200) {
+					clearInterval(moveTimer);
+					left = 400;
+				}
+				imgs[i].style.left = left + "px";
+			}
+		}, 10);
+	}
+	function stop(){
+		clearInterval(timer);
+		
+	}
+	function start(){
+		stop();//关掉之前的
+		timer=setInterval(changeImg, 2000);
+	}
+	//创建定时器，调用换图片的方法
+	onblur = function(){
+		stop();
+	}
+	onfocus = function(){
+		
+		start();
+	}
+</script>
+</head>
+<body>
+	<div onmouseover="stop()" onmouseout="start()">
+		<img alt="" src="../imgs/1.jpg"> 
+		<img alt="" src="../imgs/2.gif">
+		<img alt="" src="../imgs/a.jpg">
+	</div>
+</body>
+</html>

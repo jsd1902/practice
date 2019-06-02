@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div,img{
+width: 200px;
+height: 150px;
+}
+div{
+position: relative;
+overflow: hidden;
+}
+img{
+position: absolute;
+}
+</style>
+<script type="text/javascript">
+onload = function(){
+	var imgs = document.getElementsByTagName("img");
+	for(var i =0;i<imgs.length;i++){
+		imgs[i].style.left = i*200+"px";
+	}
+} 
+function changeImg(){
+	var moveTimer =  setInterval(function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i = 0;i<imgs.length;i++){
+			var left = parseInt(imgs[i].style.left);
+			left-=2;
+			if(left<=-200){
+				clearInterval(moveTimer);
+			}
+			left = left<=-200?400:left;
+			imgs[i].style.left = left+"px";
+		}
+	},10)
+}
+
+var timer = setInterval(changeImg,2000);
+function start(){
+	stop();
+	timer = setInterval(changeImg,2000);
+}
+function stop(){
+	clearInterval(timer);
+}
+onblur = function(){
+	start();
+}
+onfouce =function(){
+	stop();
+}
+</script>
+</head>
+<body>
+<div onmouseout="start()" onmouseover="stop()">
+<img alt="" src="../imgs/e.jpg">
+<img alt="" src="../imgs/f.jpg">
+<img alt="" src="../imgs/g.jpg">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

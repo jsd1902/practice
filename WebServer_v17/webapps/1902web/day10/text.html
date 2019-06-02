@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+onload=function(){
+	var imgs = document.getElementsByTagName("img");
+	 for(var i = 0;i<imgs.length;i++){
+		imgs[i].style.left = i*200+"px";
+	} 
+}
+function changeimg(){
+	var movetimer = setInterval(function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i = 0;i<imgs.length;i++){
+			var left = parseInt(imgs[i].style.left);
+			left-=2;
+			if(left<=-200){
+				left=400;
+				clearInterval(movetimer);
+			}
+			imgs[i].style.left=left+"px";
+		}
+	},10);
+}
+ var timer = setInterval(changeimg,2000);
+ function stop(){
+	 clearInterval(timer);
+ }
+ function start(){
+	 timer = setInterval(changeimg,2000);
+	 onblur = function(){
+		 stop();
+	 }
+	 onfocus = function(){
+		 start();
+	 }
+ }
+ 
+</script>
+<style type="text/css">
+img,div{
+width: 200px;
+height: 150px;
+}
+div{
+position: relative;
+overflow: hidden;
+}
+img{
+position: absolute;
+}
+</style>
+</head>
+<body>
+<div onmouseover="stop()" onmouseout="start()">
+<img alt="" src="../imgs/1.jpg">
+<img alt="" src="../imgs/2.gif">
+<img alt="" src="../imgs/a.jpg">
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function() {
+		var d = new Date();
+		myh3.innerText = d.toLocaleTimeString();
+	}
+	setInterval(function() {
+		var d = new Date();
+		myh3.innerText = d.toLocaleTimeString();
+	}, 1000);
+	var second = 0;
+	function myfn() {
+		d1.disabled = true;
+		second = (i1.value * 3600) + (i2.value * 60) + parseInt(i3.value);
+		showTime();
+		 var timer = setInterval(function() {
+			second -= 1;
+			showTime();
+			if(second==0){
+				clearInterval(timer);
+				d1.disabled = false;
+			}
+		}, 1000);
+	}
+	function showTime() {
+		var h = parseInt(second / 3600);
+		var m = parseInt(second % 3600 / 60);
+		var s = parseInt(second % 60);
+		h=h<10?"0"+h:h;
+		m=m<10?"0"+m:m;
+		s=s<10?"0"+s:s;
+		var str = h + "小时" + m+ "分" + s+ "秒";
+		myh2.innerText = str;
+	}
+	setTimeout(function(){
+		//alert("下课")
+	},3000);
+</script>
+</head>
+<body>
+	<h3 id="myh3"></h3>
+	<input type="text" id="i1" placeholder="小时">
+	<input type="text" id="i2" placeholder="分钟">
+	<input type="text" id="i3" placeholder="秒">
+	<input type="button" value="开始" onclick="myfn()" id="d1">
+	<h2 id="myh2"></h2>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div, img {
+	width: 200px;
+	height: 150px;
+}
+
+img {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	var imgs = document.getElementsByTagName("img");
+	onload = function() {
+		imgs[0].style.display = "inline-block";
+		/* 
+		var x = 0;
+		var y = 1;
+		var z = 2;
+		 setInterval(function() {
+			x++;
+			y++;
+			z++;
+			imgs[x % 3].style.display = "inline-block";
+			imgs[y % 3].style.display = "none";
+			imgs[z % 3].style.display = "none";
+		}, 1000); */
+	}
+	var index = 1;
+	setInterval(function() {
+		index++;
+		for (var i = 0; i < imgs.length; i++) {
+		}
+		imgs[i].style.display = i == index%3 ? "inline-block" : "none";
+	}, 1000);
+</script>
+</head>
+<body>
+	<div>
+		<img alt="" src="../imgs/1.jpg"> <img alt="" src="../imgs/2.gif">
+		<img alt="" src="../imgs/a.jpg">
+	</div>
+</body>
+</html>

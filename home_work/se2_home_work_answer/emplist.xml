@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+  <emp id="1">
+    <name>张小花</name>
+    <age>26</age>
+    <gender>男</gender>
+    <salary>7000</salary>
+    <hiredate>2014-08-03</hiredate>
+  </emp>
+  <emp id="2">
+    <name>lisa</name>
+    <age>23</age>
+    <gender>女</gender>
+    <salary>6000</salary>
+    <hiredate>2012-07-15</hiredate>
+  </emp>
+  <emp id="3">
+    <name>王大锤</name>
+    <age>25</age>
+    <gender>男</gender>
+    <salary>8000</salary>
+    <hiredate>2011-04-23</hiredate>
+  </emp>
+  <emp id="4">
+    <name>赵四</name>
+    <age>27</age>
+    <gender>女</gender>
+    <salary>12000</salary>
+    <hiredate>2010-12-17</hiredate>
+  </emp>
+  <emp id="5">
+    <name>jackson</name>
+    <age>29</age>
+    <gender>男</gender>
+    <salary>16000</salary>
+    <hiredate>2008-02-29</hiredate>
+  </emp>
+  <emp id="6">
+    <name>rose</name>
+    <age>32</age>
+    <gender>女</gender>
+    <salary>18000</salary>
+    <hiredate>2006-01-02</hiredate>
+  </emp>
+  <emp id="7">
+    <name>佟湘玉</name>
+    <age>24</age>
+    <gender>女</gender>
+    <salary>11000</salary>
+    <hiredate>2009-03-06</hiredate>
+  </emp>
+  <emp id="8">
+    <name>白展堂</name>
+    <age>33</age>
+    <gender>男</gender>
+    <salary>17000</salary>
+    <hiredate>2010-09-01</hiredate>
+  </emp>
+  <emp id="9">
+    <name>marry</name>
+    <age>40</age>
+    <gender>女</gender>
+    <salary>36000</salary>
+    <hiredate>1998-10-04</hiredate>
+  </emp>
+  <emp id="10">
+    <name>李大嘴</name>
+    <age>30</age>
+    <gender>男</gender>
+    <salary>14000</salary>
+    <hiredate>2002-11-30</hiredate>
+  </emp>
+</list>
